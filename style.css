@@ -1,0 +1,54 @@
+.navbar-nav .nav-link:hover {
+  color: rgb(6, 164, 255);
+  transition: 0.2s ease-in-out;
+}
+.global-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(img/hitam\ \(2\).jpg);
+  background-size: cover;
+}
+.login-form {
+  width: 380px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.219);
+  background-filter: blur (5px);
+}
+input[type="email"],
+input[type="password"] {
+  background: rgb(228, 227, 227);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.img-kontak {
+  width: 15vh;
+  height: 15vh;
+}
+.btn2 {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 4px;
+  cursor: pointer;
+  border: none;
+  width: 40%;
+  font-size: medium;
+  font-family: "Times New Roman", Times, serif;
+}
+.btn2:hover {
+  background-color: skyblue;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Point</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<!-- nav -->
+<nav class="navbar sticky-top " style="background-color: rgb(37, 37, 37);" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Auva Azmiazizi</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Auva Azmiazizi</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="galeri.html">Galeri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="dafttar.html">Daftar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="kontak.html">Kontak</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="index.html" role="button">Logout</a>
+          </li>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- nav selesai -->
+
+    <div class="container-conten">
+      <h1>Floating Point 8 bit</h1>
+      <p>
+        Format floating-point 8 bit umumnya tidak digunakan, tetapi kita bisa
+        menggunakan format serupa dengan IEEE 754 dengan penyesuaian. Format
+        floating-point 8 bit yang disederhanakan terdiri dari:
+      </p>
+      <p>1. 1 bit untuk tanda (sign bit)</p>
+      <p>2. 3 bit untuk eksponen</p>
+      <p>3. 4 bit untuk mantissa (bagian fraksi)</p>
+      <br />
+      <p>Contoh soal:</p>
+      <h3>1. Buat floating point 8 bit 12,9</h3>
+
+      <p>Jawaban:</p>
+      <p>&#10146; Langkah 1 : Tentukan Tanda (Sign Bit)</p>
+      <p style="padding-left: 30px">
+        Dikarena 12,9 adalah positif maka Tanda (Sign Bit) adalah 0
+      </p>
+
+      <p>&#10146; Langkah 2 : Konversi ke Biner</p>
+      <p style="padding-left: 30px">
+        • 12 ubah dulu menjadi biner dengan cara dibagi 2
+      </p>
+      <p style="padding-left: 45px">12 : 2 = 6 sisa 0</p>
+      <p style="padding-left: 45px">6 : 2 = 3 sisa 0</p>
+      <p style="padding-left: 45px">3 : 2 = 1 sisa 1</p>
+      <p style="padding-left: 45px">1 : 2 = 0 sisa 1</p>
+      <p style="padding-left: 45px">
+        Lalu susun sisa-sisa dari bawah ke atas: 1100
+      </p>
+      <p style="padding-left: 45px">12 ke biner: 1100</p>
+      <p style="padding-left: 30px">
+        • 0,9 ubah menjadi biner dengan cara dikali 2
+      </p>
+      <p style="padding-left: 45px">
+        0,9 × 2 = 1,8 (bagian bulat = 1, sisa = 0,8)
+      </p>
+      <p style="padding-left: 45px">
+        0,8 × 2 = 1,6 (bagian bulat = 1, sisa = 0,6)
+      </p>
+      <p style="padding-left: 45px">
+        0,6 × 2 = 1,2 (bagian bulat = 1, sisa = 0,2)
+      </p>
+      <p style="padding-left: 45px">
+        0,2 × 2 = 0,4 (bagian bulat = 0, sisa = 0,4) dan seterusnya.
+      </p>
+      <p style="padding-left: 45px">
+        Jadi 0,9 dalam biner: 0.11100110011 dan seterusnya, tapi kita ambil
+        0.1110
+      </p>
+      <p style="padding-left: 30px">• Digabung menjadi satu : 1100.1110.</p>
+
+      <p>&#10146; Langkah 3 : Normalisasi</p>
+      <p style="padding-left: 30px">
+        1100.1110 dinormalisasikan menjadi 1.1001110 × 2<sup>3</sup>
+      </p>
+
+      <p>&#10146; Langkah 4 : Eksponen</p>
+      <p style="padding-left: 30px">
+        • Bias untuk eksponen 3-bit adalah 3 (karena 2<sup>(3−1)</sup>−1=3).
+      </p>
+      <p style="padding-left: 45px">Eksponen sebenarnya adalah 3.</p>
+      <p style="padding-left: 30px">
+        • Eksponen tersimpan = eksponen sebenarnya + bias
+      </p>
+      <p style="padding-left: 255px">= 3 + 3 = 6 (biner: 110).</p>
+
+      <p>&#10146; Langkah 5 : Mantisa</p>
+      <p style="padding-left: 30px">
+        • Ambil 4 bit pertama setelah titik dari bagian fraksi yang
+        ternormalisasi: 1001.
+      </p>
+      <p style="padding-left: 45px">
+        Maka, representasi 8 bit dari 12.9 adalah: 0 | 110 | 1001
+      </p>
+      <p style="padding-left: 30px">
+        • 12,9 dalam bentuk biner adalah 01101001
+      </p>
+
+      <br />
+      <h3>2. Buat floating point 8 bit 23,4</h3>
+
+      <p>Jawaban:</p>
+      <p>&#10146; Langkah 1 : Tentukan Tanda (Sign Bit)</p>
+      <p style="padding-left: 30px">
+        Dikarena 23,4 adalah positif maka Tanda (Sign Bit) adalah 0
+      </p>
+
+      <p>&#10146; Langkah 2 : Konversi ke Biner</p>
+      <p style="padding-left: 30px">• 23 diubah menjadi biner : 10111</p>
+      <p style="padding-left: 30px">
+        • 0,4 diubah menjadi biner : 0.0110 (hanya diambil 4 bit untuk mantissa)
+      </p>
+      <p style="padding-left: 30px">• Digabung menjadi satu : 10111.0110</p>
+
+      <p>&#10146; Langkah 3 : Normalisasi</p>
+      <p style="padding-left: 30px">
+        10111.0110 dinormalisasikan menjadi 1.01110110 × 2<sup>4</sup>
+      </p>
+
+      <p>&#10146; Langkah 4 : Eksponen</p>
+      <p style="padding-left: 30px">
+        • Bias untuk eksponen 3-bit adalah 3 (karena 2<sup>(3−1)</sup> −1=3).
+      </p>
+      <p style="padding-left: 40px">Eksponen sebenarnya adalah 4.</p>
+      <p style="padding-left: 30px">
+        • Eksponen tersimpan = eksponen sebenarnya + bias
+      </p>
+      <p style="padding-left: 255px">= 4 + 3 = 7 (biner: 111).</p>
+
+      <p>&#10146; Langkah 5 : Mantisa</p>
+      <p style="padding-left: 30px">
+        • Ambil 4 bit pertama setelah titik dari bagian fraksi yang
+        ternormalisasi: 0111.
+      </p>
+      <p style="padding-left: 40px">
+        Maka, representasi 8 bit dari 23,4 adalah: 0 | 111 | 0111
+      </p>
+      <p style="padding-left: 30px">
+        • 23,4 dalam bentuk biner adalah 01110111
+      </p>
+      <br />
+      <h3>3. Buat floating point 8 bit 9,89</h3>
+
+      <p>Jawaban:</p>
+      <p>&#10146; Langkah 1 : Tentukan Tanda (Sign Bit)</p>
+      <p style="padding-left: 30px">
+        Dikarena 9,89 adalah positif maka Tanda (Sign Bit) adalah 0
+      </p>
+
+      <p>&#10146; Langkah 2 : Konversi ke Biner</p>
+      <p style="padding-left: 30px">• 9 diubah menjadi biner : 1001</p>
+      <p style="padding-left: 30px">
+        • 0,89 diubah menjadi biner : 0.1110 (hanya diambil 4 bit untuk
+        mantissa)
+      </p>
+      <p style="padding-left: 30px">• Digabung menjadi satu : 1001.1110</p>
+
+      <p>&#10146; Langkah 3 : Normalisasi</p>
+      <p style="padding-left: 30px">
+        1001.1110 dinormalisasikan menjadi 1.0011110 × 2<sup>3</sup>
+      </p>
+
+      <p>&#10146; Langkah 4 : Eksponen</p>
+      <p style="padding-left: 30px">
+        • Bias untuk eksponen 3-bit adalah 3 (karena 2<sup>(3−1)</sup> −1=3).
+      </p>
+      <p style="padding-left: 40px">Eksponen sebenarnya adalah 3.</p>
+      <p style="padding-left: 30px">
+        • Eksponen tersimpan = eksponen sebenarnya + bias
+      </p>
+      <p style="padding-left: 255px">= 3 + 3 = 6 (biner: 110).</p>
+
+      <p>&#10146; Langkah 5 : Mantisa</p>
+      <p style="padding-left: 30px">
+        • Ambil 4 bit pertama setelah titik dari bagian fraksi yang
+        ternormalisasi: 0011.
+      </p>
+      <p style="padding-left: 40px">
+        Maka, representasi 8 bit dari 9,89 adalah: 0 | 110 | 0011
+      </p>
+      <p style="padding-left: 30px">
+        • 9,89 dalam bentuk biner adalah 01100011
+      </p>
+      <br />
+      <h3>4. Buat floating point 8 bit 56,78</h3>
+
+      <p>Jawaban:</p>
+      <p>&#10146; Langkah 1 : Tentukan Tanda (Sign Bit)</p>
+      <p style="padding-left: 30px">
+        Dikarena 56,78 adalah positif maka Tanda (Sign Bit) adalah 0
+      </p>
+
+      <p>&#10146; Langkah 2 : Konversi ke Biner</p>
+      <p style="padding-left: 30px">• 56 diubah menjadi biner : 111000</p>
+      <p style="padding-left: 30px">
+        • 0,78 diubah menjadi biner : 0.1100 (hanya diambil 4 bit untuk
+        mantissa)
+      </p>
+      <p style="padding-left: 30px">• Digabung menjadi satu : 111000.1100</p>
+
+      <p>&#10146; Langkah 3 : Normalisasi</p>
+      <p style="padding-left: 30px">
+        111000.1100 dinormalisasikan menjadi 1.110001100 × 2<sup>5</sup>
+      </p>
+
+      <p>&#10146; Langkah 4 : Eksponen</p>
+      <p style="padding-left: 30px">
+        • Bias untuk eksponen 3-bit adalah 3 (karena 2<sup>(3−1)</sup> −1=3).
+      </p>
+      <p style="padding-left: 40px">Eksponen sebenarnya adalah 5.</p>
+      <p style="padding-left: 30px">
+        • Eksponen tersimpan = eksponen sebenarnya + bias
+      </p>
+      <p style="padding-left: 255px">= 5 + 3 = 8 (biner: 1000).</p>
+      <p style="padding-left: 30px">
+        • Dikarenakan eksponennya 4 bit maka yang kita ambil 3 bit saja.
+        Eksponen disini adalah 1000 maka hasilnya 100
+      </p>
+
+      <p>&#10146; Langkah 5 : Mantisa</p>
+      <p style="padding-left: 30px">
+        • Ambil 4 bit pertama setelah titik dari bagian fraksi yang
+        ternormalisasi: 1100.
+      </p>
+      <p style="padding-left: 40px">
+        Maka, representasi 8 bit dari 56,78 adalah: 0 | 100 | 1100
+      </p>
+      <p style="padding-left: 30px">
+        • 56,78 dalam bentuk biner adalah 01001100
+      </p>
+      <br />
+      <br />
+      <h1>ULANGAN AKHIR SEMERTER</h1>
+      <br />
+      <h3>
+        1. Bagaimana sistem bus dapat mempengaruhi kecepatan dan efisiensi
+        sebuah sistem komputer?
+      </h3>
+      <p>
+        Sistem bus dalam komputer mempengaruhi kecepatan dan efisiensi
+        keseluruhan sistem dengan berbagai cara. Pertama, bandwidth bus adalah
+        ukuran seberapa banyak data yang bisa dipindahkan sekaligus. Semakin
+        besar bandwidth, semakin banyak data yang bisa dipindahkan, sehingga
+        meningkatkan kecepatan sistem. Kedua, latensi yaitu waktu yang
+        dibutuhkan data untuk berpindah dari satu komponen ke komponen lain,
+        juga sangat penting. Latensi yang rendah berarti data bisa berpindah
+        lebih cepat, membuat sistem lebih responsif. Ketiga, Cara bus
+        diimplementasikan dalam sistem juga mempengaruhi kinerjanya. Misalnya,
+        bus yang dioptimalkan untuk tugas-tugas tertentu dapat meningkatkan
+        efisiensi untuk aplikasi spesifik tersebut. Selain itu, ada berbagai
+        jenis bus seperti bus data, bus alamat, dan bus kontrol. Masing-masing
+        punya peran khusus dalam komunikasi antara CPU, memori, dan perangkat
+        input/output, yang bersama-sama menentukan efisiensi sistem.
+        Faktor-faktor ini, ditambah dengan kecepatan jam bus dan prosesor,
+        sangat mempengaruhi kecepatan dan efisiensi sistem komputer secara
+        keseluruhan.
+      </p>
+      <br />
+      <h3>
+        2. Bagaimana penggunaan buffer dapat meningkatkan efisiensi operasi I/O?
+      </h3>
+      <p>
+        Penggunaan buffer dapat meningkatkan efisiensi operasi I/O karena
+        memungkinkan penyimpanan sementara data selama transfer, sehingga CPU
+        dapat melanjutkan tugas lain tanpa harus menunggu. Buffering juga
+        memungkinkan sistem operasi mengelola banyak operasi I/O secara
+        bersamaan, mengurangi kebutuhan perangkat I/O untuk mengakses memori
+        utama terus-menerus, yang dapat memperlambat sistem. Dengan menampung
+        banyak byte data dalam buffer, frekuensi operasi I/O yang lambat dapat
+        dikurangi, sehingga operasi I/O menjadi lebih cepat dan efisien, yang
+        akhirnya meningkatkan kinerja keseluruhan sistem komputer.
+      </p>
+      <br />
+      <h3>
+        3. Bagaimana cara kerja sebuah ALU (Arithmetic Logic Unit)? Berikan
+        contoh operasi yang dapat dilakukan oleh ALU
+      </h3>
+      <p>Cara kerja ALU melibatkan beberapa langkah utama:</p>
+      <p>1. ALU menerima input operan dari register CPU atau memori.</p>
+      <p>
+        2. Berdasarkan sinyal kontrol dari Control Unit (CU), ALU melakukan
+        operasi yang diminta pada operan. Operasi ini bisa berupa aritmatika
+        (seperti penjumlahan, pengurangan, perkalian, dan pembagian) atau logika
+        (seperti AND, OR, NOT, dan XOR).
+      </p>
+      <p>
+        3. Hasil dari operasi ini kemudian dikirim kembali ke register atau
+        memori untuk disimpan atau digunakan dalam operasi lebih lanjut.
+      </p>
+      <p>Contoh operasi yang dapat dilakukan oleh ALU meliputi:</p>
+      <p>1. Penjumlahan: Menambahkan dua bilangan.</p>
+      <p>2. Pengurangan: Mengurangi satu bilangan dari bilangan lain.</p>
+      <p>
+        3. AND Logika: Melakukan operasi logika AND pada dua bilangan biner.
+      </p>
+      <p>4. OR Logika: Melakukan operasi logika OR pada dua bilangan biner.</p>
+      <br />
+      <h3>
+        4. Jelaskan peran register dan Control Unit dalam eksekusi instruksi
+        dalam CPU.
+      </h3>
+      <p>
+        Register adalah unit penyimpanan kecil yang sangat cepat di dalam CPU
+        yang digunakan untuk menyimpan data sementara, instruksi, dan status
+        prosesor saat ini. Register memungkinkan CPU untuk menjalankan tugas
+        dengan cepat karena data yang dibutuhkan tersedia dengan segera tanpa
+        harus mengakses memori utama yang lebih lambat. Contoh jenis register
+        termasuk Instruction Register (IR), yang menyimpan instruksi saat ini
+        yang sedang dieksekusi, dan Program Counter (PC), yang menyimpan alamat
+        instruksi berikutnya yang akan dieksekusi.
+      </p>
+      <p>
+        Control Unit (CU) bertanggung jawab untuk mengontrol operasi CPU dan
+        mengarahkan aliran data antara CPU dan perangkat lain. CU membaca
+        instruksi dari memori, menguraikannya, dan menghasilkan sinyal kontrol
+        yang mengarahkan bagian lain dari CPU, seperti ALU (Arithmetic Logic
+        Unit) dan register, untuk melakukan operasi yang diperlukan. CU juga
+        memastikan sinkronisasi kerja antar komponen dalam menjalankan instruksi
+        program sehingga CPU dapat beroperasi dengan efisien.
+      </p>
+      <br />
+      <h3>
+        5. Bagaimana set instruksi mempengaruhi kinerja sebuah CPU? Berikan
+        contoh.
+      </h3>
+      <p>
+        Set instruksi (Instruction Set Architecture atau ISA) mempengaruhi
+        kinerja CPU dengan menentukan jumlah dan jenis instruksi yang dapat
+        dieksekusi, serta efisiensi daya dan kecepatan jam prosesor. ISA yang
+        lebih sederhana seperti RISC (Reduced Instruction Set Computing)
+        memiliki instruksi yang lebih sedikit dan lebih sederhana, memungkinkan
+        eksekusi instruksi yang lebih cepat dan efisiensi daya yang lebih baik,
+        seperti pada arsitektur ARM yang umum digunakan dalam perangkat mobile
+        untuk masa pakai baterai yang lama. Sebaliknya, ISA yang lebih kompleks
+        seperti CISC (Complex Instruction Set Computing) memiliki instruksi yang
+        lebih banyak dan kompleks, yang dapat mengurangi kecepatan eksekusi
+        tetapi mungkin mengurangi jumlah total instruksi yang diperlukan untuk
+        menyelesaikan tugas, seperti pada arsitektur x86 yang lebih umum di
+        perangkat desktop dan server untuk kinerja tinggi.
+      </p>
+    </div>
+
+    <footer class="text-light text-center" style="background-color: rgb(37, 37, 37);">
+      Moh Auva Azmiazizi - 2024
+          </footer>
+
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
